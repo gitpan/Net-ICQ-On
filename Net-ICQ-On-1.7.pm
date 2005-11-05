@@ -1,5 +1,5 @@
 #ICQOn.pm (c)2005 Jerome K Maule McKean, Dream ƒrequency
-#ICQ Online Status Tester v1.6 (20051017); Checks whether a user is online and returns 1 for online and 0 for offline.
+#ICQ Online Status Tester v1.7 (20051105); Checks whether a user is online and returns 1 for online and 0 for offline.
 package ICQOn;
 
 use LWP::UserAgent;
@@ -18,7 +18,7 @@ sub ICQOn {
 	my $Result="";
 	my $UA=new LWP::UserAgent;
 
-	$UA->agent("DreamƒrequencyICQOnlineTester/1.6");
+	$UA->agent("Dream ƒrequency Net-ICQ-On ICQ Online Tester/1.7");
 	$Req=HTTP::Request->new(GET=>"http://status.icq.com/online.gif?icq=$ICQNo&img=5");
 	$Req->referer('http://dreamfrequency.com');
 	$Result=$UA->request($Req);
@@ -36,7 +36,7 @@ __END__
 
 =head1 NAME
 
-ICQOn - ICQ Online Status Tester v1.6 (20051017)
+Net::ICQ::On - ICQ Online Status Tester v1.7 (20051105)
 
 =head1 SYNOPSIS
 
@@ -56,10 +56,10 @@ This module checks the online status of any ICQ user and returns 1 for online an
 
 =head1 COPYRIGHT
 
-Code is copyright (c)2005 Jerome K Maule McKean, Dream Frequency.  ICQ is copyright (c)1998-2005 ICQ Inc..
+Code is copyright (c)2005 Jerome McKean, Dream Frequency.  ICQ is copyright (c)1998-2005 ICQ Inc..
 
 =head1 AUTHOR INFORMATION
 
-ICQOn was created by Jerome K Maule McKean (jerome@dreamfrequency.com), owner of Dream Frequency (http://dreamfrequency.com).  This Perl module is free software and may be redistributed under the same license as Perl itself.
+Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com), owner of Dream Frequency (http://dreamfrequency.com).  This Perl module is free software and may be redistributed unchanged under the same license as Perl itself.
 
 =cut
