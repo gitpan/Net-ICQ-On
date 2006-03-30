@@ -1,8 +1,8 @@
 #Net::ICQ::On (c)2005-6 Jerome McKean, Dream ƒrequency
 #On.pm
-#ICQ Online Tester v1.10.3 (20060321); Check whether any ICQ user is online and return 1 for online or 0 for offline.
+#ICQ Online Tester v1.10.4 (20060324); Check whether any ICQ user is online and return 1 for online or 0 for offline.
 package Net::ICQ::On;
-$VERSION=1.10.3;
+$VERSION='1.10.4';
 
 use HTTP::Request::Common;
 use LWP::UserAgent;
@@ -19,7 +19,7 @@ sub Test {
 	my $Online=0;
 	my $Result='';
 	my $UA=new LWP::UserAgent;
-	$UA->agent("Dream ƒrequency Net-ICQ-On ICQ Online Tester/1.10.3");
+	$UA->agent("Dream ƒrequency Net-ICQ-On ICQ Online Tester/$VERSION");
 
 	$Result=$UA->request(GET "http://status.icq.com/online.gif?icq=$ICQNo&img=5");
 	if ($Result->is_success) {
@@ -58,13 +58,14 @@ Example use: in xhtml, see above example, to display ICQ number in green if onli
 
 =head1 UPDATED
 
+Version 1.10.4 (20060324): Minor code update.
 Version 1.10.3 (20060321): Updated distribution.
 Version 1.10.2 (20060320): Changed name of function.  Minor code updates.  Updated documentation.
 Version 1.9.4: Changed to HTTP::Request::Common for simplicity and optimisation.
 
 =head1 VERSION
 
-v1.10.3 (20060320)
+v1.10.4 (20060324)
 
 =head1 COPYRIGHT
 
