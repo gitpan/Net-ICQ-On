@@ -1,8 +1,8 @@
 #Net::ICQ::On (c)2005-6 Jerome McKean, Dream ƒrequency
 #On.pm
-#ICQ Online Tester v1.10.4 (20060324); Check whether any ICQ user is online and return 1 for online or 0 for offline.
+#ICQ Online Tester v1.10.5 (20060404); Check whether any ICQ user is online and return 1 for online or 0 for offline.
 package Net::ICQ::On;
-$VERSION='1.10.4';
+$VERSION='1.10.5';
 
 use HTTP::Request::Common;
 use LWP::UserAgent;
@@ -54,10 +54,13 @@ Net::ICQ::On - ICQ Online Tester
 
 This module checks the online state of any ICQ user and returns 1 for online or 0 for offline.  It downloads the smallest ICQ online gif and analyses it to determine online state.
 
-Example use: in xhtml, see above example, to display ICQ number in green if online or default colour if offline.
+It was designed to replace the trademark large ICQ flower GIF from my website with the stated outcome of the online state.
+
+Example uses:  In xhtml, see above example, to display ICQ number in green if online or default colour if offline.  As a gateway for Live Support.  To redirect email link to ICQ message if online.
 
 =head1 UPDATED
 
+Version 1.10.5 (20060404): Minor documentation update.
 Version 1.10.4 (20060324): Minor code update.
 Version 1.10.3 (20060321): Updated distribution.
 Version 1.10.2 (20060320): Changed name of function.  Minor code updates.  Updated documentation.
@@ -65,7 +68,7 @@ Version 1.9.4: Changed to HTTP::Request::Common for simplicity and optimisation.
 
 =head1 VERSION
 
-v1.10.4 (20060324)
+v1.10.5 (20060404)
 
 =head1 COPYRIGHT
 
@@ -73,6 +76,6 @@ Code is copyright (c)2005-6 Jerome McKean, Dream Frequency.  ICQ is copyright (c
 
 =head1 AUTHOR INFORMATION
 
-Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com), owner of Dream Frequency (http://dreamfrequency.com), Useful Windows Software and Adult Frequency (http://adultfrequencysoft.com), Adult Windows Software.  This Perl module is free software and may be freely redistributed unchanged.
+Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com), owner of Dream Frequency (http://dreamfrequency.com), Useful 99¢ Windows Software and Adult Frequency (http://adultfrequencysoft.com), Adult Windows Software.  This Perl module is free software and may be freely redistributed unchanged.
 
 =cut
