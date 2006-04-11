@@ -1,8 +1,9 @@
 #Net::ICQ::On (c)2005-6 Jerome McKean, Dream ƒrequency
 #On.pm
-#ICQ Online Tester v1.10.5 (20060404); Check whether any ICQ user is online and return 1 for online or 0 for offline.
+#ICQ Online Tester v1.10.6 (20060407); Check whether any ICQ user is
+#	online and return 1 for online or 0 for offline.
 package Net::ICQ::On;
-$VERSION='1.10.5';
+$VERSION='1.10.6';
 
 use HTTP::Request::Common;
 use LWP::UserAgent;
@@ -21,7 +22,8 @@ sub Test {
 	my $UA=new LWP::UserAgent;
 	$UA->agent("Dream ƒrequency Net-ICQ-On ICQ Online Tester/$VERSION");
 
-	$Result=$UA->request(GET "http://status.icq.com/online.gif?icq=$ICQNo&img=5");
+	$Result=$UA->request(GET "http://status.icq.com/online.gif?icq=$ICQNo&
+img=5");
 	if ($Result->is_success) {
 		$GIF=$Result->content;
 		$GIF=unpack 'H*', $GIF;
@@ -47,35 +49,52 @@ Net::ICQ::On - ICQ Online Tester
 
   my $Online=Net::ICQ::On->Test(204913808);
   print "My ICQ number is ";
-  if ($Online==1) { print "<span style=\"color: green;\">204913808</span>.\n"; }
+  if ($Online==1) { print "<span style=\"color: green;\">204913808
+</span>.\n"; }
   else { print "204913808.\n"; }
 
 =head1 DESCRIPTION
 
-This module checks the online state of any ICQ user and returns 1 for online or 0 for offline.  It downloads the smallest ICQ online gif and analyses it to determine online state.
+This module tests the online state of any ICQ user and returns 1 for
+online or 0 for offline.  It downloads the smallest ICQ online gif and
+analyses it to determine online state.  No ICQ account is necessary.  No
+ICQ server connection is necessary.
 
-It was designed to replace the trademark large ICQ flower GIF from my website with the stated outcome of the online state.
+It was designed to replace the trademark large ICQ flower GIF that ICQ
+promotes as a form of online test suitable for webpages.  This was
+initially for my website and then developed into a useful Perl module
+registered at CPAN.
 
-Example uses:  In xhtml, see above example, to display ICQ number in green if online or default colour if offline.  As a gateway for Live Support.  To redirect email link to ICQ message if online.
+Example uses:  In xhtml, see above example, to display ICQ number in
+green if online or default colour if offline.  As a gateway for live
+support.  To redirect email link to ICQ message if recipient is online.
 
 =head1 UPDATED
 
+Version 1.10.6 (20060407): Minor documentation update.
 Version 1.10.5 (20060404): Minor documentation update.
 Version 1.10.4 (20060324): Minor code update.
 Version 1.10.3 (20060321): Updated distribution.
-Version 1.10.2 (20060320): Changed name of function.  Minor code updates.  Updated documentation.
-Version 1.9.4: Changed to HTTP::Request::Common for simplicity and optimisation.
+Version 1.10.2 (20060320): Changed name of function.  Minor code
+updates.  Updated documentation.
+Version 1.9.4: Changed to HTTP::Request::Common for simplicity and
+optimisation.
 
 =head1 VERSION
 
-v1.10.5 (20060404)
+v1.10.6 (20060407)
 
 =head1 COPYRIGHT
 
-Code is copyright (c)2005-6 Jerome McKean, Dream Frequency.  ICQ is copyright (c)1998-2006 ICQ Inc..
+Code is copyright (c)2005-6 Jerome McKean, Dream Frequency.  ICQ is
+copyright (c)1998-2006 ICQ Inc..
 
 =head1 AUTHOR INFORMATION
 
-Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com), owner of Dream Frequency (http://dreamfrequency.com), Useful 99¢ Windows Software and Adult Frequency (http://adultfrequencysoft.com), Adult Windows Software.  This Perl module is free software and may be freely redistributed unchanged.
+Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com),
+owner of Dream Frequency (http://dreamfrequency.com), Useful 99¢ Windows
+Software and Adult Frequency (http://adultfrequencysoft.com), Adult
+Windows Software.  This Perl module is free software and may be freely
+redistributed unchanged.
 
 =cut

@@ -3,9 +3,12 @@ Changes
 
 UPDATED
 
+Version 1.10.6 (20060407): Minor documentation update.
 Version 1.10.5 (20060404): Minor documentation update.
 Version 1.10.4 (20060324): Minor code update.
 Version 1.10.3 (20060321): Updated distribution.
-Version 1.10.2 (20060320): Changed name of function.  Minor code updates.  Updated documentation.
-Version 1.9.4: Changed to HTTP::Request::Common for simplicity and optimisation.
+Version 1.10.2 (20060320): Changed name of function.  Minor code
+updates.  Updated documentation.
+Version 1.9.4: Changed to HTTP::Request::Common for simplicity and
+optimisation.
 Version 1.7: Outdated.
