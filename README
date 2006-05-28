@@ -19,16 +19,26 @@ SYNOPSIS
 
 DESCRIPTION
 
-This module checks the online state of any ICQ user and returns 1 for
+This module tests the online state of any ICQ user and returns 1 for
 online or 0 for offline.  It downloads the smallest ICQ online gif and
-analyses it to determine online state.
+analyses it to determine the online state of the user.  No ICQ account is
+necessary.  No ICQ server login is necessary.  This makes it quick to
+return a result.
 
-It was designed to replace the trademark large ICQ flower GIF from my
-website with the stated outcome of the online state.
+It was designed to replace the trademark large ICQ flower GIF that ICQ
+promotes as a form of online test suitable for webpages because it didn't
+fit into the footer of my website.  This was coded initially for my
+website and then developed into a useful Perl module registered at CPAN.
 
-Example uses:  In xhtml, see above example, to display ICQ number in
-green if online or default colour if offline.  As a gateway for Live
-Support.  To redirect email link to ICQ message if online.
+Example uses:
+
+* In xhtml, see above example, on a homepage to display your ICQ number
+in green if you're online or in the default colour if you're offline.
+
+* As an interface for ICQ cam live support.  Provide the option to
+connect via ICQ if you are online else display an email link.
+
+* To redirect email to ICQ if the recipient is online.
 
 UPDATED
 
@@ -43,7 +53,7 @@ optimisation.
 
 VERSION
 
-v1.10.5 (20060404)
+v1.10.7 (20060528)
 
 COPYRIGHT
 
@@ -53,7 +63,7 @@ copyright (c)1998-2006 ICQ Inc..
 AUTHOR INFORMATION
 
 Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com),
-owner of Dream Frequency (http://dreamfrequency.com), Useful 99¢ Windows
-Software and Adult Frequency (http://adultfrequencysoft.com), Adult
+owner of Dream Frequency (http://dreamfrequency.com), Useful Windows
+Software and Adult Frequency (http://adultfrequency.com), Adult
 Windows Software.  This Perl module is free software and may be freely
 redistributed unchanged.
