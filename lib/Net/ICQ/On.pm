@@ -1,9 +1,9 @@
-#Net::ICQ::On (c)2005-6 Jerome McKean, Dream ビequency
+#Net::ICQ::On (c)2005-2010 Pro ビequency
 #On.pm
-#ICQ Online Tester v1.10.7 (20060528); Check whether any ICQ user is
-#	online or not, returns 1 for online and 0 for offline.
+#ICQ Online Tester; Check whether any ICQ user is online or not, returns
+#	1 for online or 0 for offline.
 package Net::ICQ::On;
-$VERSION='1.10.7';
+$VERSION='1.11.0'; #20100315
 
 use HTTP::Request::Common;
 use LWP::UserAgent;
@@ -16,11 +16,11 @@ sub Test {
 	shift;
 	my $GIF='';
 	my $ICQNo=$_[0];
-	my $Match='4749463839615';
+	my $Match='47494638396112001200A';
 	my $Online=0;
 	my $Result='';
 	my $UA=new LWP::UserAgent;
-	$UA->agent("Dream ビequency Net-ICQ-On ICQ Online Tester/$VERSION");
+	$UA->agent("Pro ビequency Net-ICQ-On ICQ Online Tester/$VERSION");
 
 	$Result=$UA->request(GET "http://status.icq.com/online.gif?icq=$ICQNo&
 img=5");
@@ -47,38 +47,45 @@ Net::ICQ::On - ICQ Online Tester
 
   my $Online=Net::ICQ::On->Test(<ICQ No./>);
 
-  my $Online=Net::ICQ::On->Test(204913808);
+  my $Online=Net::ICQ::On->Test(555123456);
   print "My ICQ number is ";
-  if ($Online==1) { print "<span style=\"color: green;\">204913808
+  if ($Online==1) { print "<span style=\"color: green;\">555123456
 </span>.\n"; }
-  else { print "204913808.\n"; }
+  else { print "555123456.\n"; }
 
 =head1 DESCRIPTION
 
 This module tests the online state of any ICQ user and returns 1 for
-online or 0 for offline.  It downloads the smallest ICQ online gif and
-analyses it to determine the online state of the user.  No ICQ account is
-necessary.  No ICQ server login is necessary.  This makes it quick to
-return a result.
+online or 0 for offline.
 
-It was designed to replace the trademark large ICQ flower GIF that ICQ
-promotes as a form of online test suitable for webpages because it didn't
-fit into the footer of my website.  This was coded initially for my
-website and then developed into a useful Perl module registered at CPAN.
+Features:
+* No ICQ account is necessary,
+* No ICQ server login is necessary.
+
+These make it simple and quick to return the result.
+
+It downloads the smallest ICQ online gif and analyses it to determine the
+online state of the user.
+
+It was designed to replace the large ICQ flower GIF that ICQ promotes as
+an online test suitable for webpages because the standard GIF didn't fit
+into the footer of the webpage it was required for.  This was coded
+initially for the Dream Frequency website and then developed into a
+useful Perl module registered at CPAN.
 
 Example uses:
-
 * In xhtml, see above example, on a homepage to display your ICQ number
-in green if you're online or in the default colour if you're offline.
-
-* As an interface for ICQ cam live support.  Provide the option to
-connect via ICQ if you are online else display an email link.
-
+in green if you're online or in the default colour if you're offline,
+* As an interface for ICQ cam live support,
+* As an interface for ICQ messaging,
 * To redirect email to ICQ if the recipient is online.
 
 =head1 UPDATED
 
-Version 1.10.7 (20060528): Minor code update for new GIF and minor documentation update. - 
+Version 1.11.0 (20100315): Update for new ICQ GIF image. - 
+Version 1.10.8 (20060628): Minor documentation update. - 
+Version 1.10.7 (20060528): Minor code update for new GIF and minor
+documentation update. - 
 Version 1.10.6 (20060407): Minor documentation update. - 
 Version 1.10.5 (20060404): Minor documentation update. - 
 Version 1.10.4 (20060324): Minor code update. - 
@@ -91,19 +98,19 @@ Versions 1.9.1, 1.9.0, 1.7, 1.6, 1.5, 1.4, 1.3: Previous versions.
 
 =head1 VERSION
 
-v1.10.7 (20060528)
+v1.11.0 (20100315)
 
 =head1 COPYRIGHT
 
-Code is copyright (c)2005-6 Jerome McKean, Dream Frequency.  ICQ is
-copyright (c)1998-2006 ICQ Inc..
+Code is copyright (c)2005-2010 Pro Frequency.  ICQ is copyright
+(c)1998-2010 ICQ Inc..
 
 =head1 AUTHOR INFORMATION
 
-Net::ICQ::On was created by Jerome McKean (jerome@dreamfrequency.com),
-owner of Dream Frequency (http://dreamfrequency.com), Useful Windows
-Software and Adult Frequency (http://adultfrequency.com), Adult
-Windows Software.  This Perl module is free software and may be freely
-redistributed unchanged.
+Net::ICQ::On was created by Frequency,
+http://aboutf.com/
+Free technical support: http://profrequency.com/support/
+This Perl module is free software and may be freely redistributed
+unchanged.
 
 =cut
